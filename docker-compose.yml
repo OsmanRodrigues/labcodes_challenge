@@ -1,0 +1,16 @@
+version: "3.0"
+services:
+    labcodes_challenge_database:
+        image: postgres:10.4
+        env_file: .env
+        volumes:
+            - "./srv/docker/postgres/:/var/lib/postgresql/data"
+        ports:
+            - "50001:5432"
+    labcodes_challenge_redis:
+        image: redis:alpine
+        hostname: redis
+        ports:
+            - "50002:6379"
+        volumes:
+            - "./srv/docker/redis/:/data/"

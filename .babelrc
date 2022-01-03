@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["@babel/env", {
+      "targets": {
+        "browsers": "last 3 versions",
+        "node": "current"
+      }
+    }],
+    "@babel/react"
+  ]
+}
