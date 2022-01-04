@@ -14,3 +14,7 @@ dev:
 node_setup:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 	export NVM_DIR=$$HOME/.nvm; . ~/.nvm/nvm.sh ; nvm install --lts
+
+run:
+	./run_all.sh
+
