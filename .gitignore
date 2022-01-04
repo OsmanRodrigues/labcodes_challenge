@@ -107,6 +107,9 @@ ENV/
 # SQLite
 db.sqlite3
 
+# Postgres
+srv/docker/postgres/
+
 # Django collected static files
 staticfiles/
 
