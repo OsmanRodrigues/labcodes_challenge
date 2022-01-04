@@ -1,0 +1,56 @@
+{
+  "name": "labcodes_challenge",
+  "version": "1.0.0",
+  "description": "### Backend",
+  "main": "project/assets/src/js/index.js",
+  "engines": {
+    "node": "v12.14.0"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/webpack-cli --config webpack.config.production.js --mode=production",
+    "start": "node server.js",
+    "watch": "npm run start -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labcodes/labcodes_challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labcodes/labcodes_challenge/issues"
+  },
+  "homepage": "https://github.com/labcodes/labcodes_challenge#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-react-constant-elements": "^7.2.0",
+    "@babel/plugin-transform-react-inline-elements": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.12.0",
+    "react-hot-loader": "^4.11.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "styled-components": "^2.4.1",
+    "webpack": "^4.35.0",
+    "webpack-bundle-tracker": "^0.4.2-beta",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-redux-api-tools": "^2.1.1",
+    "react-router-dom": "^5.0.1",
+    "react-spinners-kit": "^1.9.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "whatwg-fetch": "^3.0.0"
+  }
+}
