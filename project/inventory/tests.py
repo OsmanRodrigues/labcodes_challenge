@@ -25,6 +25,8 @@ class ListProductsEndpointTests(TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(expected_content, response.json())
 
+        print('Get list products: OK')
+
 
 class ProductDetailEndpointTests(TestCase):
     url = reverse_lazy('inventory:detail', args=["xpto-code"])
@@ -43,9 +45,13 @@ class ProductDetailEndpointTests(TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(expected_content, response.json())
 
+        print('Get product: OK')
+
     def test_404(self):
         response = self.client.get(self.url)
         self.assertEqual(404, response.status_code)
+
+        print('Product GET endpoint not found (error 404): OK')
 
 
 class UpdateProductQuantityEndpointTests(TestCase):
@@ -64,6 +70,8 @@ class UpdateProductQuantityEndpointTests(TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual({'available_quantity': 1100}, response.json())
 
+        print('Add product quantity: OK')
+
     def test_withdrawl_quantity(self):
         data = {'quantity': -100}
 
@@ -72,13 +80,19 @@ class UpdateProductQuantityEndpointTests(TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual({'available_quantity': 900}, response.json())
 
+        print('Withdrawl product quantity: OK')
+
     def test_bad_request_for_invalid_data(self):
         response = self.client.post(self.url, data={})
 
         self.assertEqual(400, response.status_code)
         self.assertIn('quantity', response.json())
 
+        print('Bad request for invalid data: OK')
+
     def test_404(self):
         self.product.delete()
         response = self.client.post(self.url, data={})
         self.assertEqual(404, response.status_code)
+
+        print('Product POST endpoint not found (error 404): OK')
