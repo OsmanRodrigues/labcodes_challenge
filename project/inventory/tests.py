@@ -96,3 +96,23 @@ class UpdateProductQuantityEndpointTests(TestCase):
         self.assertEqual(404, response.status_code)
 
         print('Product POST endpoint not found (error 404): OK')
+
+
+class ListCategoryEndpointTests(TestCase):
+    url = reverse_lazy('category:list')
+
+    def test_list_categories(self):
+        categories = baker.make(Category, _quantity=3, _fill_optional=True)
+
+        response = self.client.get(self.url)
+        expected_content = [
+            {
+                "name": c.name,
+                "code": c.code
+            } for c in categories
+        ]
+
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(expected_content, response.json())
+
+        print('Get list categories: OK')
