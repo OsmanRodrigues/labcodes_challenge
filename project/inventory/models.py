@@ -14,3 +14,16 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.code}: {self.name}'
+
+
+#TODO: temporary class template, modify it asap.
+class Category(models.Model):
+    code = models.CharField(max_length=255, verbose_name=_('Code'), primary_key=True)
+    name = models.CharField(max_length=255, verbose_name=_('Category name'))
+
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
+
+    def __str__(self):
+        return f'{self.code}: {self.name}'
