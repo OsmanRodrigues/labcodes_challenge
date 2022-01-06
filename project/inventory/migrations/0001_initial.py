@@ -24,4 +24,15 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Products',
             },
         ),
+        migrations.CreateModel(
+            name='Category',
+            fields=[
+                ('code', models.CharField(max_length=255, primary_key=True, serialize=False, verbose_name='Code')),
+                ('name', models.CharField(max_length=255, verbose_name='Category name'))
+            ],
+            options={
+                'verbose_name': 'Category',
+                'verbose_name_plural': 'Categories',
+            },
+        ),
     ]
