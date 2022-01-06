@@ -7,12 +7,12 @@ from inventory.models import Product, Category
 
 
 class ListProductsEndpointTests(TestCase):
-    url = reverse_lazy('inventory:list')
 
     def test_list_products(self):
+        url = reverse_lazy('inventory:list')
         products = baker.make(Product, _quantity=3, _fill_optional=True)
 
-        response = self.client.get(self.url)
+        response = self.client.get(url)
         expected_content = [
             {
                 "name": p.name,
@@ -28,10 +28,10 @@ class ListProductsEndpointTests(TestCase):
         print('Get list products: OK')
 
     def test_list_categories(self):
-        self.url = reverse_lazy('inventory:list_category')
-        categories = baker.make(Category, _quantity=3, _fill_optional=True)
+        url = reverse_lazy('inventory:list_category')
+        categories = baker.make(Category, _quantity=4, _fill_optional=True)
 
-        response = self.client.get(self.url)
+        response = self.client.get(url)
         expected_content = [
             {
                 "name": c.name,
