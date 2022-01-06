@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 
 from model_bakery import baker
 
-from inventory.models import Product
+from inventory.models import Product, Category
 
 
 class ListProductsEndpointTests(TestCase):
@@ -26,6 +26,23 @@ class ListProductsEndpointTests(TestCase):
         self.assertEqual(expected_content, response.json())
 
         print('Get list products: OK')
+
+    def test_list_categories(self):
+        self.url = reverse_lazy('inventory:list_category')
+        categories = baker.make(Category, _quantity=3, _fill_optional=True)
+
+        response = self.client.get(self.url)
+        expected_content = [
+            {
+                "name": c.name,
+                "code": c.code
+            } for c in categories
+        ]
+
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(expected_content, response.json())
+
+        print('Get list categories: OK')
 
 
 class ProductDetailEndpointTests(TestCase):
@@ -96,23 +113,3 @@ class UpdateProductQuantityEndpointTests(TestCase):
         self.assertEqual(404, response.status_code)
 
         print('Product POST endpoint not found (error 404): OK')
-
-
-class ListCategoryEndpointTests(TestCase):
-    url = reverse_lazy('category:list')
-
-    def test_list_categories(self):
-        categories = baker.make(Category, _quantity=3, _fill_optional=True)
-
-        response = self.client.get(self.url)
-        expected_content = [
-            {
-                "name": c.name,
-                "code": c.code
-            } for c in categories
-        ]
-
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(expected_content, response.json())
-
-        print('Get list categories: OK')
