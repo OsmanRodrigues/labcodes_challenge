@@ -6,7 +6,7 @@ from model_bakery import baker
 from inventory.models import Product, Category
 
 
-class ListProductsEndpointTests(TestCase):
+class InventoryListsEndpointTests(TestCase):
 
     def test_list_products(self):
         url = reverse_lazy('inventory:list')
