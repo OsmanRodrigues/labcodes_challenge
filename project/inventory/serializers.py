@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from inventory.models import Product
+from inventory.models import Category, Product
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -9,6 +9,12 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
 
+
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = '__all__'
 
 
 class QuantitySerializer(serializers.Serializer):
