@@ -19,9 +19,10 @@ class InventoryListsEndpointTests(TestCase):
                 "name": p.name,
                 "available_quantity": p.available_quantity,
                 "description": p.description,
-                "category": p.category.code
+                "category": p.category.name
             } for p in products
         ]
+
         self.assertEqual(200, response.status_code)
         self.assertEqual(expected_content, response.json())
 
@@ -55,7 +56,7 @@ class ProductDetailEndpointTests(TestCase):
             "name": product.name,
             "available_quantity": product.available_quantity,
             "description": product.description,
-            "category": product.category.code
+            "category": product.category.name
         }
 
         response = self.client.get(self.url)
