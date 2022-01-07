@@ -1,30 +1,30 @@
 [
     {
         "model": "inventory.category",
-        "pk": 1,
+        "pk": "Printer Cartridges",
         "fields": {
-            "name": "Printer Cartridges"
+            "code": 1
         }
     },
     {
         "model": "inventory.category",
-        "pk": 2,
+        "pk": "Pens and Pencils",
         "fields": {
-            "name": "Pens and Pencils"
+            "code": 2
         }
     },
     {
         "model": "inventory.category",
-        "pk": 3,
+        "pk": "Reams",
         "fields": {
-            "name": "Reams"
+            "code": 3
         }
     },
     {
         "model": "inventory.category",
-        "pk": 4,
+        "pk": "Erasers",
         "fields": {
-            "name": "Erasers"
+            "code": 4
         }
     }
 ]
