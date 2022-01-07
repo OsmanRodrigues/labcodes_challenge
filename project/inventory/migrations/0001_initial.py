@@ -14,8 +14,8 @@ class Migration(migrations.Migration):
          migrations.CreateModel(
             name='Category',
             fields=[
-                ('code', models.CharField(max_length=255, primary_key=True, serialize=False, verbose_name='Code')),
-                ('name', models.CharField(max_length=255, verbose_name='Category name'))
+                ('name', models.CharField(max_length=255, primary_key=True, verbose_name='Category name')),
+                ('code', models.IntegerField(serialize=False, verbose_name='Code'))
             ],
             options={
                 'verbose_name': 'Category',

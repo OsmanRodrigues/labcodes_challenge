@@ -3,8 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Category(models.Model):
-    code = models.CharField(max_length=255, verbose_name=_('Code'), primary_key=True)
-    name = models.CharField(max_length=255, verbose_name=_('Category name'))
+    name = models.CharField(max_length=255, verbose_name=_('Category name'), primary_key=True)
+    code = models.IntegerField(verbose_name=_('Code'))
 
     class Meta:
         verbose_name = _('Category')
