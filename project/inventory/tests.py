@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 
 from model_bakery import baker
 
-from inventory.models import Product, Category
+from inventory.models import Category, Product
 
 
 class InventoryListsEndpointTests(TestCase):
@@ -18,7 +18,8 @@ class InventoryListsEndpointTests(TestCase):
                 "name": p.name,
                 "description": p.description,
                 "code": p.code,
-                "available_quantity": p.available_quantity
+                "available_quantity": p.available_quantity,
+                "category": p.category
             } for p in products
         ]
 
@@ -54,7 +55,8 @@ class ProductDetailEndpointTests(TestCase):
             "name": product.name,
             "description": product.description,
             "code": product.code,
-            "available_quantity": product.available_quantity
+            "available_quantity": product.available_quantity,
+            "category": product.category
         }
 
         response = self.client.get(self.url)
