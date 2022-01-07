@@ -15,14 +15,13 @@ class InventoryListsEndpointTests(TestCase):
         response = self.client.get(url)
         expected_content = [
             {
-                "name": p.name,
-                "description": p.description,
                 "code": p.code,
+                "name": p.name,
                 "available_quantity": p.available_quantity,
-                "category": p.category
+                "description": p.description,
+                "category": p.category.code
             } for p in products
         ]
-
         self.assertEqual(200, response.status_code)
         self.assertEqual(expected_content, response.json())
 
@@ -52,11 +51,11 @@ class ProductDetailEndpointTests(TestCase):
     def test_get_product(self):
         product = baker.make(Product, code='xpto-code')
         expected_content = {
-            "name": product.name,
-            "description": product.description,
             "code": product.code,
+            "name": product.name,
             "available_quantity": product.available_quantity,
-            "category": product.category
+            "description": product.description,
+            "category": product.category.code
         }
 
         response = self.client.get(self.url)
