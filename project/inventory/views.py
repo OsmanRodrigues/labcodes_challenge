@@ -3,11 +3,15 @@ from rest_framework.views import APIView, Response
 
 from django.shortcuts import get_object_or_404
 
-from inventory.models import Product
-from inventory.serializers import ProductSerializer, QuantitySerializer
+from inventory.models import Category, Product
+from inventory.serializers import CategorySerializer, ProductSerializer, QuantitySerializer
+
+class ListCategoryEndpoint(ListAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
 
-class ListInventoryEndpoint(ListAPIView):
+class ListProductEndpoint(ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 

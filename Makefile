@@ -8,6 +8,9 @@ run_frontend:
 run_django:
 	python project/manage.py runserver
 
+run_api_test:
+	python project/manage.py test inventory.tests
+
 dev:
 	make -j2 run_django run_frontend
 
@@ -15,6 +18,9 @@ node_setup:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 	export NVM_DIR=$$HOME/.nvm; . ~/.nvm/nvm.sh ; nvm install --lts
 
-run:
-	./run_all.sh
+rundev:
+	./scripts/run_dev.sh
+
+apitest:
+	./scripts/run_api_test.sh
 

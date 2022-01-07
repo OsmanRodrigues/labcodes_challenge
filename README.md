@@ -24,7 +24,7 @@ $ python manage.py runserver
 We've already prepared a valid DB with pre-populated products. If you want to load it, just run:
 
 ```
-$ python manage.py loaddata products
+$ python manage.py loaddata categories products
 ```
 
 If you want to create your own products, you can do so via http://localhost:8000/admin but you have to create a super user to access it.
@@ -44,7 +44,7 @@ npm i
 Then, you'll need to run it together with the backend. We created a `make` command to deal with running both in parallel:
 
 ```
-make dev
+make dev or make rundev (this second running the virtualenvwrapper directly)
 ```
 
 Our basic react app lies inside the `project/assets/src/` folder.
@@ -53,6 +53,14 @@ Before deploying, make sure you have created a proper build by running:
 
 ```
 make build_frontend
+```
+
+### Tests
+
+To run api/backend tests:
+
+```
+make apitest
 ```
 
 ## API Docs
@@ -76,6 +84,23 @@ The endpoint is only accessible via **GET** and it lists the products in the inv
     "description": "0.40mm Ink Pen",
     "code": "P-0156",
     "available_quantity": 40,
+  }
+]
+```
+
+### `/api/inventory/category`
+
+The endpoint is only accessible via **GET** and it lists the categories in the inventory. A valid **200** response will have the following JSON body:
+
+```
+[
+  {
+    "name": "Pens and Pencils",
+    "code": 2
+  },
+  {
+    "name": "Reams",
+    "code": 3
   }
 ]
 ```
