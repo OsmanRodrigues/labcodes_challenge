@@ -29,7 +29,11 @@ export const fetchProduct = (code) => {
       success: FETCH_PRODUCT_SUCCESS,
       failure: FETCH_PRODUCT_FAILURE,
     },
-    shouldDispatch: state => !state.products.selectedItem,
+    shouldDispatch: state => {
+      const isCurrentProduct = code === state.products.selectedItem?.code;
+
+      return !isCurrentProduct
+    },
     apiCallFunction: () => fetchFromApi(`/api/inventory/${code}/`)
   };
 }
