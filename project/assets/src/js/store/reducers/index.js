@@ -22,6 +22,12 @@ const productReducer = (state = initialState, action) => {
   switch(action.type) {
 
     case FETCH_PRODUCT:
+      return {
+        ...state,
+        isLoading: true,
+        error: null
+      };
+
     case FETCH_PRODUCTS:
       return {
         ...state,
@@ -44,6 +50,13 @@ const productReducer = (state = initialState, action) => {
       };
 
     case FETCH_PRODUCT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.error.data,
+        selectedItem: null
+      };
+
     case FETCH_PRODUCTS_FAILURE:
       return {
         ...state,
