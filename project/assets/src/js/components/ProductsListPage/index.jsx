@@ -4,7 +4,7 @@ import { fetchProducts } from '../../store/actions';
 import { PongSpinner } from 'react-spinners-kit';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from "prop-types";
-import Product from './Product';
+import Product from '../Product';
 import { H1 } from '../Atomic/Typography.atm';
 
 
