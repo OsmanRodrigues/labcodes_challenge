@@ -24,3 +24,8 @@ rundev:
 apitest:
 	./scripts/run_api_test.sh
 
+apptest:
+	npm run test
+
+alltest:
+	make apitest apptest
