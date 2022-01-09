@@ -35,7 +35,7 @@ export class ProductsListPage extends React.Component {
             <H1>Products List</H1>
           </Col>
         </Row>
-        <Button>Click me</Button>
+        <Button>See Details</Button>
         {products.map(product => (
           <Row key={product.code}>
             <Col>
