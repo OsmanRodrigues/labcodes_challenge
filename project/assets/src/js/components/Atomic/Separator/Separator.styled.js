@@ -1,26 +1,26 @@
 import styled, { css } from "styled-components";
-import { color } from "../constant.atm";
+import { color, size, spacing } from "../constant.atm";
 
 const verticalSeparatorBaseCss = css`
   display: inline-block;
-  width: 1px;
-  height: 1rem;
-  margin: 0rem 0.5rem;
+  width: ${size.separator.vertical.normal.with};
+  height: ${size.separator.vertical.normal.height};
+  margin: ${spacing.margin.separator.vertical.normal};
 
   *:first-child{
+    border-right: 1px solid ${color.gray};
     width: 100%;
     height: 100%;
-    border-right: 1px solid ${color.gray};
   }
 `
 const verticalSeparatorLargeCss = css`
-  height: 2.0rem;
+  height: ${size.separator.vertical.large.height};
 `
 const horizontalSeparatorBaseCss = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.75rem 0rem;
+  ${spacing.margin.separator.horizontal.normal};
 
   *:first-child{
     border-bottom: 1px solid ${color.gray};
@@ -28,7 +28,7 @@ const horizontalSeparatorBaseCss = css`
   }
 `
 const horizontalSeparatorLargeCss = css`
-  margin: 1.5rem 0rem;
+  margin: ${spacing.margin.separator.horizontal.large};
 `
 
 export const SeparatorStyled = styled.div`

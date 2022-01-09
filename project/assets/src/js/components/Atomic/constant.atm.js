@@ -28,12 +28,34 @@ export const size = {
   },
   iconButton: {
     normal: '40px'
+  },
+  separator: {
+    vertical: {
+      normal: {
+        with: '1px',
+        height: '1rem',
+      },
+      large: {
+        height: '2.0rem'
+      }
+    }
   }
 }
 
 export const spacing = {
   padding: {
     large: '20px'
+  },
+  margin: {
+    separator: {
+      vertical: {
+        normal: '0rem 0.5rem'
+      },
+      horizontal: {
+        normal: '0.75rem 0rem',
+        large: '1.5rem 0rem'
+      }
+    }
   }
 }
 
