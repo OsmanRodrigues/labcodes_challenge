@@ -3,17 +3,17 @@ import { connect } from 'react-redux'
 import { fetchProducts } from '../../store/actions';
 import { PongSpinner } from 'react-spinners-kit';
 import { Container, Row, Col } from 'react-bootstrap';
-
+import PropTypes from "prop-types";
 import Product from './Product';
 
 
-class ProductsList extends React.Component {
+export class ProductsList extends React.Component {
 
   componentDidMount(){
     this.props.fetchProducts();
   }
 
-  render(){
+  render() {
     const { isLoading, products } = this.props;
 
     if (isLoading) {
@@ -45,6 +45,18 @@ class ProductsList extends React.Component {
     );
   }
 }
+
+ProductsList.propTypes = {
+  isLoading: PropTypes.bool,
+  fetchProducts: PropTypes.func,
+  products: PropTypes.array
+};
+
+ProductsList.defaultProps = {
+  isLoading: false,
+  fetchProducts: () => {},
+  products: []
+};
 
 const mapStateToProps = (state) => ({ isLoading: state.products.isLoading, products: state.products.items });
 const mapDispatchToProps = (dispatch) => ({ fetchProducts: () => dispatch(fetchProducts()) });
