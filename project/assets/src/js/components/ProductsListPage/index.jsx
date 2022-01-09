@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import Product from '../Product';
 import { H1 } from '../Atomic/Typography.atm';
+import { Button } from '../Atomic/Button.mol';
 
 
 export class ProductsListPage extends React.Component {
@@ -34,7 +35,7 @@ export class ProductsListPage extends React.Component {
             <H1>Products List</H1>
           </Col>
         </Row>
-
+        <Button>Click me</Button>
         {products.map(product => (
           <Row key={product.code}>
             <Col>
