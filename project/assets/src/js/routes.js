@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import ProductsList from './components/ProductsList';
+import ProductsListPage from './components/ProductsListPage';
 import ProductDetail from './components/ProductDetail';
 
 
@@ -10,7 +10,7 @@ export default class Routes extends React.Component {
     return (
       <Router>
         <Route path='/:code/' component={ProductDetail} />
-        <Route path='/' exact component={ProductsList} />
+        <Route path='/' exact component={ProductsListPage} />
       </Router>
     )
   }

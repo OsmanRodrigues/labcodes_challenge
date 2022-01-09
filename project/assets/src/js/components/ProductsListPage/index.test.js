@@ -3,13 +3,13 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 
-import {ProductsList} from "./index";
+import {ProductsListPage} from "./index";
 
 describe("Products", () => {
   it("renders without props", async () => {
     const component = render(
       <MemoryRouter>
-        <ProductsList />
+        <ProductsListPage />
       </MemoryRouter>
     );
     expect(component).toBeTruthy();
@@ -20,7 +20,7 @@ describe("Products", () => {
     expect(mockedFunc).not.toBeCalled();
     render(
       <MemoryRouter>
-        <ProductsList fetchProducts={mockedFunc} />
+        <ProductsListPage fetchProducts={mockedFunc} />
       </MemoryRouter>
     );
     expect(mockedFunc).toBeCalled();
@@ -30,7 +30,7 @@ describe("Products", () => {
     const message = "Products List";
     render(
       <MemoryRouter>
-        <ProductsList />
+        <ProductsListPage />
       </MemoryRouter>
     );
     expect(screen.getByText(message)).toBeTruthy();
