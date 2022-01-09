@@ -7,7 +7,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { fetchProduct } from '../../store/actions';
 
 
-class ProductsDetail extends React.Component {
+class ProductDetailPage extends React.Component {
 
   componentDidMount(){
     const { code } = this.props.match.params;
@@ -64,4 +64,4 @@ class ProductsDetail extends React.Component {
 const mapStateToProps = (state) => ({ isLoading: state.products.isLoading, product: state.products.selectedItem });
 const mapDispatchToProps = (dispatch) => ({ fetchProduct: (code) => dispatch(fetchProduct(code)) });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetailPage);
