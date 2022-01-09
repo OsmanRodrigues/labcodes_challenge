@@ -47,7 +47,7 @@
     "react-hot-loader": "^4.11.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "styled-components": "^2.4.1",
+    "styled-components": "^5.3.3",
     "webpack": "^4.35.0",
     "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-cli": "^3.3.5",
