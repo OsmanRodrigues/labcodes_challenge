@@ -1,7 +1,7 @@
 export const color = {
   black: '#2E3942',
   white: '#FFFFFF',
-
+  gray: '#97AEBE',
   brand: {
     dark: '#005F61',
     highDark: '#004748',
