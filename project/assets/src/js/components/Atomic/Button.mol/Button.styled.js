@@ -24,3 +24,31 @@ export const ButtonStyled = styled.button`
       ${shadow.large} ${color.brand.highLight};
   }
 `;
+
+export const IconButtonStyled = styled(ButtonStyled)`
+  color: ${color.brand.normal};
+  background: none;
+  width: ${size.iconButton.normal};
+  height: ${size.iconButton.normal};
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :hover, :active {
+    color: ${color.brand.ultraLight};
+    box-shadow: unset;
+  }
+
+  :focus {
+    color: ${color.brand.ultraLight};
+    box-shadow:
+      ${shadow.normal} ${color.brand.light},
+      ${shadow.large} ${color.brand.highLight};
+  }
+
+  *:first-child{
+    width: 70%;
+    height: 70%;
+  }
+`;
