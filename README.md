@@ -57,10 +57,22 @@ make build_frontend
 
 ### Tests
 
+To run all tests:
+
+```
+make alltest
+```
+
 To run api/backend tests:
 
 ```
 make apitest
+```
+
+To run app/frontend tests:
+
+```
+make apptest
 ```
 
 ## API Docs
