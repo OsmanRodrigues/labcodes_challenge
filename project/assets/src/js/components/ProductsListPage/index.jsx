@@ -4,7 +4,7 @@ import { fetchProducts } from '../../store/actions';
 import { PongSpinner } from 'react-spinners-kit';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from "prop-types";
-import Product from '../Product';
+import ProductCard from '../ProductCard';
 import { H1 } from '../Atomic/Typography.atm';
 
 export class ProductsListPage extends React.Component {
@@ -36,7 +36,7 @@ export class ProductsListPage extends React.Component {
         {products.map(product => (
           <Row key={product.code}>
             <Col>
-              <Product {...product}/>
+              <ProductCard {...product}/>
             </Col>
           </Row>
         ))}
