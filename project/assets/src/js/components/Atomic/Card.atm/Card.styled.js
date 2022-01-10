@@ -3,7 +3,6 @@ import { color, radius, shadow, size, spacing, viewPort } from "../constant.atm"
 
 export const CardStyled = styled.div`
   width: ${size.card.width};
-  min-height: ${size.card.height};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
