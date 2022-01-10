@@ -56,6 +56,9 @@ export const spacing = {
     large: '20px'
   },
   margin: {
+    general: {
+      large: '28px'
+    },
     separator: {
       vertical: {
         normal: '0rem 0.5rem'
@@ -79,4 +82,7 @@ export const viewPort = {
   mobile: '768px'
 };
 
+export const zIndex = {
+  high: 1
+}
 
