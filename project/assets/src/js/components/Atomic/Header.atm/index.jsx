@@ -5,7 +5,7 @@ import { HeaderStyled } from "./Header.styled";
 export class Header extends React.Component {
   render() {
     return (
-      <Link to="/">
+      <Link noDecoration to="/">
         <HeaderStyled>
             {this.props.children}
         </HeaderStyled>
