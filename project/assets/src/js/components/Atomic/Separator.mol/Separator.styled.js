@@ -12,10 +12,10 @@ const verticalSeparatorBaseCss = css`
     width: 100%;
     height: 100%;
   }
-`
+`;
 const verticalSeparatorLargeCss = css`
   height: ${size.separator.vertical.large.height};
-`
+`;
 const horizontalSeparatorBaseCss = css`
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ const horizontalSeparatorBaseCss = css`
     border-bottom: 1px solid ${color.gray};
     width: 100%;
   }
-`
+`;
 const horizontalSeparatorLargeCss = css`
   margin: ${spacing.margin.separator.horizontal.large};
 `

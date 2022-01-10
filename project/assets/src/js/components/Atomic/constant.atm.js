@@ -12,18 +12,18 @@ export const color = {
     light: '#009699',
     normal: '#007B7D'
   }
-}
+};
 
 export const radius = {
   large: '8px',
   normal: '4px'
-}
+};
 
 export const shadow = {
   normal: 'inset 0px 0px 0px 2px',
   large: ' inset 0px 0px 0px 4px',
   emphasize: '0px 0px 20px'
-}
+};
 
 export const size = {
   button: {
@@ -48,7 +48,7 @@ export const size = {
       }
     }
   }
-}
+};
 
 export const spacing = {
   padding: {
@@ -66,17 +66,17 @@ export const spacing = {
       }
     }
   }
-}
+};
 
 export const typography = {
   font: {
     family: '"Lato", sans-serif',
     style: 'normal'
   }
-}
+};
 
 export const viewPort = {
   mobile: '768px'
-}
+};
 
 
