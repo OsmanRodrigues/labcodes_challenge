@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import ProductCard from '../ProductCard';
 import { H1 } from '../Atomic/Typography.atm';
+import { Separator } from '../Atomic/Separator.mol';
 
 export class ProductsListPage extends React.Component {
 
@@ -29,17 +30,18 @@ export class ProductsListPage extends React.Component {
     return (
       <Container>
         <Row>
-          <Col>
+          <Col xs={6}>
             <H1>Products List</H1>
           </Col>
         </Row>
-        {products.map(product => (
-          <Row key={product.code}>
-            <Col>
-              <ProductCard {...product}/>
+        <Row>
+          {products.map(product => (
+            <Col xs={6} key={product.code}>
+              <ProductCard {...product} />
+              <Separator large noLine/>
             </Col>
-          </Row>
-        ))}
+          ))}
+        </Row>
       </Container>
     );
   }

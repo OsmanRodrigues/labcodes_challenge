@@ -5,7 +5,7 @@ export class Separator extends React.Component {
   render() {
     return (
       <SeparatorStyled {...this.props}>
-        <SeparatorStrawStyled/>
+        <SeparatorStrawStyled noLine={this.props?.noLine}/>
       </SeparatorStyled>
     )
   }

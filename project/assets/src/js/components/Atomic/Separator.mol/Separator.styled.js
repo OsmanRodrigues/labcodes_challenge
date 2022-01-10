@@ -38,4 +38,6 @@ export const SeparatorStyled = styled.div`
   `}
 `;
 
-export const SeparatorStrawStyled = styled.div``;
+export const SeparatorStrawStyled = styled.div`
+  ${props => props.noLine && 'border: none !important;'}
+`;
