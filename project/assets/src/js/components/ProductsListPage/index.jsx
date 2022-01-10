@@ -4,10 +4,10 @@ import { fetchProducts } from '../../store/actions';
 import { PongSpinner } from 'react-spinners-kit';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from "prop-types";
-import Product from './Product';
+import Product from '../Product';
+import { H1 } from '../Atomic/Typography.atm';
 
-
-export class ProductsList extends React.Component {
+export class ProductsListPage extends React.Component {
 
   componentDidMount(){
     this.props.fetchProducts();
@@ -30,10 +30,9 @@ export class ProductsList extends React.Component {
       <Container>
         <Row>
           <Col>
-            <h1>Products List</h1>
+            <H1>Products List</H1>
           </Col>
         </Row>
-
         {products.map(product => (
           <Row key={product.code}>
             <Col>
@@ -46,13 +45,13 @@ export class ProductsList extends React.Component {
   }
 }
 
-ProductsList.propTypes = {
+ProductsListPage.propTypes = {
   isLoading: PropTypes.bool,
   fetchProducts: PropTypes.func,
   products: PropTypes.array
 };
 
-ProductsList.defaultProps = {
+ProductsListPage.defaultProps = {
   isLoading: false,
   fetchProducts: () => {},
   products: []
@@ -61,4 +60,4 @@ ProductsList.defaultProps = {
 const mapStateToProps = (state) => ({ isLoading: state.products.isLoading, products: state.products.items });
 const mapDispatchToProps = (dispatch) => ({ fetchProducts: () => dispatch(fetchProducts()) });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsList);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsListPage);
