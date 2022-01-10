@@ -12,7 +12,7 @@ export const ButtonStyled = styled.button`
   font-weight: bold;
   padding: 0 ${spacing.padding.large};
 
-  :hover, :active {
+  :hover {
     background-color: ${color.brand.dark};
     box-shadow: ${shadow.normal} ${color.brand.light};
   }
@@ -35,7 +35,7 @@ export const IconButtonStyled = styled(ButtonStyled)`
   align-items: center;
   justify-content: center;
 
-  :hover, :active {
+  :hover {
     color: ${color.brand.ultraLight};
     box-shadow: unset;
   }

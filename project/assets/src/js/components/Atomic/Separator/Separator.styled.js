@@ -8,7 +8,7 @@ const verticalSeparatorBaseCss = css`
   margin: ${spacing.margin.separator.vertical.normal};
 
   *:first-child{
-    border-right: 1px solid ${color.gray};
+    border-right: 1px solid ${color.darkGray};
     width: 100%;
     height: 100%;
   }
