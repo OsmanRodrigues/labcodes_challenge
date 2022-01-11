@@ -43,8 +43,16 @@ export const size = {
   general: {
     fluid: '100%'
   },
+  header: {
+    height: '84px'
+  },
   iconButton: {
     normal: '40px'
+  },
+  image: {
+    brand: {
+      large: '21.5rem'
+    }
   },
   separator: {
     vertical: {

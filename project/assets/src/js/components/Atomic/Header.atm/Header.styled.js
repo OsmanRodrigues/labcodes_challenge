@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { spacing, zIndex } from "..";
+import { size, zIndex } from "..";
 import { color } from "../constant.atm";
 
 export const HeaderStyled = styled.header`
   background-color: ${color.brand.light};
-  height: 84px;
+  display: flex;
+  height: ${size.header.height};
   top: 0px;
   left: 0px;
   right: 0px;

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Box } from "..";
+import { Image } from "../Image.atm";
 import { HeaderStyled } from "./Header.styled";
 
 export class Header extends React.Component {
@@ -7,7 +9,9 @@ export class Header extends React.Component {
     return (
       <Link to="/">
         <HeaderStyled>
-            {this.props.children}
+          <Box horizontal position={'center'}>
+            <Image.Brand />
+          </Box>
         </HeaderStyled>
       </Link>
     );
