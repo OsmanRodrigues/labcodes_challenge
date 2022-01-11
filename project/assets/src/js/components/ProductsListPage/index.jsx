@@ -1,12 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { fetchProducts } from '../../store/actions';
-import { PongSpinner } from 'react-spinners-kit';
-import { Container, Row, Col } from 'react-bootstrap';
-import PropTypes from "prop-types";
 import ProductCard from '../ProductCard';
-import { H1 } from '../Atomic/Typography.atm';
+import PropTypes from "prop-types";
+
 import { Separator } from '../Atomic/Separator.mol';
+import { Spinner } from '../Atomic/Spinner.mol';
+import { H1 } from '../Atomic/Typography.atm';
+import { Container, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { fetchProducts } from '../../store/actions';
+import { InventoryStatusBoard } from './InventoryStatusBoard';
 
 export class ProductsListPage extends React.Component {
 
@@ -19,26 +21,25 @@ export class ProductsListPage extends React.Component {
 
     if (isLoading) {
       return (
-        <Container style={{ height: '100vh' }}>
-          <div style={{ margin: '0 auto', top: 'calc(50% - 17px)', width: '60px', position: 'relative' }}>
-            <PongSpinner />
-          </div>
-        </Container>
+       <Spinner />
       )
     }
-
     return (
-      <Container>
+      <Container fluid={"lg"}>
         <Row>
           <Col xs={6}>
             <H1>Products List</H1>
           </Col>
+          <Col xs={6}>
+            <InventoryStatusBoard products={products} />
+          </Col>
         </Row>
+        <Separator large/>
         <Row>
           {products.map(product => (
-            <Col xs={6} key={product.code}>
+            <Col xs={12} sm={6} key={product.code}>
               <ProductCard {...product} />
-              <Separator large noLine/>
+              <Separator />
             </Col>
           ))}
         </Row>
