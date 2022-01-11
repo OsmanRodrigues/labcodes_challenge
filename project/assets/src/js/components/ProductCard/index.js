@@ -1,23 +1,33 @@
 import React from 'react';
-import { Button, Card, DD, DL, DT, Link, Separator } from '../Atomic';
+import { Box, Button, Card, DD, DL, DT, H2, Link, Separator } from '../Atomic';
 
 export default function ProductCard(props){
   return (
-    <Link noDecoration to={`/${props.code}/`}>
+    <Link to={`/${props.code}/`}>
       <Card>
-        <DL>
+        <DL fluid>
           <DT>Name:</DT>
-          <DD>{props.name}</DD>
-          <Separator />
-          <DT>Code:</DT>
-          <DD>{props.code}</DD>
-          <DT>Category:</DT>
-          <DD>{props.category}</DD>
-          <Link noDecoration to={`/${props.code}/`}>
-            <Button>
-                See Details
-            </Button>
-          </Link>
+          <DD>
+            <H2>
+              {props.name}
+            </H2>
+          </DD>
+          <Separator outlined />
+          <Box horizontal>
+            <Box>
+              <DT>Code:</DT>
+              <DD>{props.code}</DD>
+              <DT>Category:</DT>
+              <DD>{props.category}</DD>
+            </Box>
+            <Box grow={0.01} position="flex-end">
+              <Link to={`/${props.code}/`}>
+                <Button>
+                    See Details
+                </Button>
+              </Link>
+            </Box>
+          </Box>
         </DL>
       </Card>
     </Link>
