@@ -1,9 +1,11 @@
+export const border = {
+  card: '2px solid',
+  separator: '1px solid'
+};
+
 export const color = {
+  background: '#E8EFF3',
   black: '#2E3942',
-  white: '#FFFFFF',
-  gray: '#B1C2CE',
-  darkGray: '#97AEBE',
-  lightGray: '#CDDBE4',
   brand: {
     dark: '#005F61',
     highDark: '#004748',
@@ -11,7 +13,11 @@ export const color = {
     ultraLight: '#DEF7F7',
     light: '#009699',
     normal: '#007B7D'
-  }
+  },
+  darkGray: '#97AEBE',
+  gray: '#B1C2CE',
+  lightGray: '#CDDBE4',
+  white: '#FFFFFF'
 };
 
 export const radius = {
@@ -20,31 +26,34 @@ export const radius = {
 };
 
 export const shadow = {
-  normal: 'inset 0px 0px 0px 2px',
+  emphasize: '0px 0px 20px',
   large: ' inset 0px 0px 0px 4px',
-  emphasize: '0px 0px 20px'
+  normal: 'inset 0px 0px 0px 2px'
 };
 
 export const size = {
   button: {
-    width: '121px',
-    height: '40px'
+    height: '40px',
+    width: '121px'
   },
   card: {
-    width: '445px',
-    height: '164px'
+    height: '164px',
+    width: '445px'
+  },
+  general: {
+    fluid: '100%'
   },
   iconButton: {
     normal: '40px'
   },
   separator: {
     vertical: {
-      normal: {
-        with: '1px',
-        height: '1rem',
-      },
       large: {
         height: '2.0rem'
+      },
+      normal: {
+        height: '1rem',
+        with: '1px'
       }
     }
   }
@@ -52,20 +61,20 @@ export const size = {
 
 export const spacing = {
   padding: {
-    medium: '16px',
-    large: '20px'
+    large: '20px',
+    medium: '16px'
   },
   margin: {
     general: {
       large: '28px'
     },
     separator: {
+      horizontal: {
+        large: '1.5rem 0rem',
+        normal: '0.75rem 0rem'
+      },
       vertical: {
         normal: '0rem 0.5rem'
-      },
-      horizontal: {
-        normal: '0.75rem 0rem',
-        large: '1.5rem 0rem'
       }
     }
   }
@@ -74,12 +83,25 @@ export const spacing = {
 export const typography = {
   font: {
     family: '"Lato", sans-serif',
+    lineHeight: {
+      dl: '1.5rem',
+      h1: '3rem',
+      h2: '2rem',
+      p: '1.25rem'
+    },
+    size: {
+      h1: '2.5rem',
+      h2: '1.5rem',
+      root: {
+        md: '14px'
+      }
+    },
     style: 'normal'
   }
 };
 
 export const viewPort = {
-  mobile: '768px'
+  md: '736px'
 };
 
 export const zIndex = {
