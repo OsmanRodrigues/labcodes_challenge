@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { color, size, spacing } from "../constant.atm";
+import { border, color, size, spacing } from "../constant.atm";
 
 const verticalSeparatorBaseCss = css`
   display: inline-block;
@@ -8,7 +8,7 @@ const verticalSeparatorBaseCss = css`
   margin: ${spacing.margin.separator.vertical.normal};
 
   *:first-child{
-    border-right: 1px solid ${color.darkGray};
+    border-right: ${border.separator} ${color.darkGray};
     width: 100%;
     height: 100%;
   }
@@ -20,10 +20,10 @@ const horizontalSeparatorBaseCss = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${spacing.margin.separator.horizontal.normal};
+  margin: ${spacing.margin.separator.horizontal.normal};
 
   *:first-child{
-    border-bottom: 1px solid ${color.gray};
+    border-bottom: ${border.separator} ${color.gray};
     width: 100%;
   }
 `;
@@ -39,5 +39,5 @@ export const SeparatorStyled = styled.div`
 `;
 
 export const SeparatorStrawStyled = styled.div`
-  ${props => props.noLine && 'border: none !important;'}
+  ${props => !props.outlined && 'border: none !important;'}
 `;

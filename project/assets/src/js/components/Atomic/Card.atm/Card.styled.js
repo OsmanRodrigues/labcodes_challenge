@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { color, radius, shadow, size, spacing, viewPort } from "../constant.atm";
+import { border, color, radius, shadow, size, spacing, viewPort } from "../constant.atm";
 
 export const CardStyled = styled.div`
-  width: ${size.card.width};
+  width: ${props => props.fluid && size.general.fluid};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -12,15 +12,15 @@ export const CardStyled = styled.div`
   box-shadow: ${shadow.normal} ${color.white};
 
   ${props => props.isFocused && `
-    border: 2px solid ${color.brand.highLight};
+    border: ${border.card} ${color.brand.highLight};
     box-sizing: border-box;
     box-shadow: ${shadow.normal} ${color.white};
   `}
 
-   @media(min-width: ${viewPort.mobile}) {
+   @media(min-width: ${viewPort.md}) {
      :hover {
        ${props => !props.isFocused && `
-         border: 2px solid ${color.lightGray};
+         border: ${border.card} ${color.lightGray};
          box-sizing: border-box;
          box-shadow: ${shadow.emphasize} ${color.gray};
        `}
