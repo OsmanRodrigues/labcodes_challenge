@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { border, color, radius, shadow, size, spacing, viewPort } from "../constant.atm";
 
 export const CardStyled = styled.div`
@@ -11,19 +11,19 @@ export const CardStyled = styled.div`
   padding: ${spacing.padding.medium};
   box-shadow: ${shadow.normal} ${color.white};
 
-  ${props => props.isFocused && `
+  ${({disableInteractivity, isFocused}) => !disableInteractivity && isFocused && `
     border: ${border.card} ${color.brand.highLight};
     box-sizing: border-box;
     box-shadow: ${shadow.normal} ${color.white};
   `}
 
-   @media(min-width: ${viewPort.md}) {
-     :hover {
-       ${props => !props.isFocused && `
-         border: ${border.card} ${color.lightGray};
-         box-sizing: border-box;
-         box-shadow: ${shadow.emphasize} ${color.gray};
-       `}
-     }
+  @media(min-width: ${viewPort.md}) {
+    :hover {
+      ${({disableInteractivity, isFocused}) => !disableInteractivity && !isFocused && `
+        border: ${border.card} ${color.lightGray};
+        box-sizing: border-box;
+        box-shadow: ${shadow.emphasize} ${color.gray};
+      `}
+    }
   }
 `;
