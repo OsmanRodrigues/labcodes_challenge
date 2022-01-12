@@ -32,6 +32,8 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   ${typographySharedStyle}
   ${headingSharedStyle}
+  font-size: ${typography.font.size.h3};
+  line-height: ${typography.font.lineHeight.h3};
 `;
 
 export const Paragraph = styled.p`
@@ -44,6 +46,7 @@ export const DL = styled.dl`
   ${typographySharedStyle}
   ${descriptionListSharedStyle}
   width: ${props => props.fluid && size.general.fluid};
+  margin: ${props => props.fluid && '0px'};
 `;
 
 export const DD = styled.dd`

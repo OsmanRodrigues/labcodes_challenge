@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box } from "..";
+import { Box } from "../Box.mol";
 import { Image } from "../Image.atm";
 import { HeaderStyled } from "./Header.styled";
 

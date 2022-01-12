@@ -82,7 +82,7 @@ export const spacing = {
         normal: '0.75rem 0rem'
       },
       vertical: {
-        normal: '0rem 0.5rem'
+        normal: '0rem 0.125rem'
       }
     }
   }
@@ -95,11 +95,13 @@ export const typography = {
       dl: '1.5rem',
       h1: '3rem',
       h2: '2rem',
+      h3: '1.5rem',
       p: '1.25rem'
     },
     size: {
       h1: '2.5rem',
       h2: '1.5rem',
+      h3: '1.25rem',
       root: {
         md: '14px'
       }
