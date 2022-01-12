@@ -19,10 +19,10 @@ node_setup:
 	export NVM_DIR=$$HOME/.nvm; . ~/.nvm/nvm.sh ; nvm install --lts
 
 rundev:
-	./scripts/run_dev.sh
+	chmod +x ./scripts/run_dev.sh && ./scripts/run_dev.sh
 
 apitest:
-	./scripts/run_api_test.sh
+	chmod +x ./scripts/run_api_test.sh && ./scripts/run_api_test.sh
 
 apptest:
 	npm run test
