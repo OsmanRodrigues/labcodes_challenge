@@ -1,5 +1,10 @@
 import React from "react";
-import { Box, Button, Card, DD, DL, DT, H2, Link, Separator } from '../Atomic';
+import { Separator } from "../Atomic/Separator.mol";
+import { Card } from "../Atomic/Card.atm";
+import { DD, DL, DT, H2 } from '../Atomic/Typography.atm';
+import { Box } from "../Atomic/Box.mol";
+import { Link } from "../Atomic/Link.atm";
+import { Button } from "../Atomic/Button.mol";
 
 export class ProductCardGeneral extends React.Component {
   render() {

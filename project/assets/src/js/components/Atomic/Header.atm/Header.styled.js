@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { size, zIndex } from "..";
-import { color } from "../constant.atm";
+import { color, size, zIndex } from "../constant.atm";
 
 export const HeaderStyled = styled.header`
   background-color: ${color.brand.light};

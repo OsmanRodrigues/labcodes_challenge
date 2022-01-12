@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { border, color, radius, shadow, size, spacing, viewPort } from "../constant.atm";
 
 export const CardStyled = styled.div`

@@ -1,5 +1,8 @@
 import React from "react";
-import { Box, Card, DD, DL, DT, H1, H3, Paragraph, Separator } from "../Atomic";
+import { Box } from "../Atomic/Box.mol";
+import { Card } from "../Atomic/Card.atm";
+import { Separator } from "../Atomic/Separator.mol";
+import { DD, DL, DT, H1, H3, Paragraph } from '../Atomic/Typography.atm';
 
 export class DetailsBoard extends React.Component {
   render() {

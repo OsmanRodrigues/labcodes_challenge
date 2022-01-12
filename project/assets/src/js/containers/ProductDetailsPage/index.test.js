@@ -1,8 +1,8 @@
 import "@babel/polyfill";
 import React from "react";
-import { MemoryRouter, Router } from "react-router-dom";
-import { render, screen } from "@testing-library/react";
 
+import { MemoryRouter } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
 import { ProductDetailsPage } from "./index";
 
 class ProductsListPageWithRouteProps extends React.Component {

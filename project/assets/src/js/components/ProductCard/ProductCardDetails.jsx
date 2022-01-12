@@ -1,5 +1,8 @@
 import React from "react";
-import { Box, Button, Card, DD, DL, DT, H2, Link, Separator } from '../Atomic';
+import { Box } from '../Atomic/Box.mol';
+import { Card } from '../Atomic/Card.atm';
+import { Separator } from '../Atomic/Separator.mol';
+import { DD, DL, DT } from '../Atomic/Typography.atm';
 
 export class ProductCardDetails extends React.Component {
   render() {
