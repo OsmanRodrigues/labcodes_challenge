@@ -4,10 +4,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 import { fetchProduct } from '../../store/actions';
-import { Button, H1, Spinner, Link, Box, Separator } from '../Atomic';
+import { Button, H1, Spinner, Link, Box, Separator } from '../../components/Atomic';
 import { FaArrowLeft } from 'react-icons/fa'
-import ProductCard from '../ProductCard';
-import { DetailsBoard } from './DetailsBoard';
+import { ProductCardDetails } from '../../components/ProductCard/ProductCardDetails';
+import { DetailsBoard } from '../../components/Board/DetailsBoard';
 
 
 export class ProductDetailsPage extends React.Component {
@@ -44,7 +44,7 @@ export class ProductDetailsPage extends React.Component {
           <Separator/>
           <Row>
             <Col sm={8}>
-              <ProductCard product={product} isDetails />
+              <ProductCardDetails product={product} />
               <Separator/>
             </Col>
             <Col sm={4}>

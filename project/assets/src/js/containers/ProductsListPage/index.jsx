@@ -1,14 +1,14 @@
 import React from 'react';
-import ProductCard from '../ProductCard';
 import PropTypes from "prop-types";
 
-import { Separator } from '../Atomic/Separator.mol';
-import { Spinner } from '../Atomic/Spinner.mol';
-import { H1 } from '../Atomic/Typography.atm';
+import { Separator } from '../../components/Atomic/Separator.mol';
+import { Spinner } from '../../components/Atomic/Spinner.mol';
+import { H1 } from '../../components/Atomic/Typography.atm';
 import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../store/actions';
-import { InventoryStatusBoard } from './InventoryStatusBoard';
+import { InventoryStatusBoard } from '../../components/Board/InventoryStatusBoard';
+import { ProductCardGeneral } from '../../components/ProductCard/ProductCardGeneral';
 
 export class ProductsListPage extends React.Component {
 
@@ -38,7 +38,7 @@ export class ProductsListPage extends React.Component {
         <Row>
           {products.map(product => (
             <Col xs={12} sm={6} key={product.code}>
-              <ProductCard product={product} />
+              <ProductCardGeneral product={product} />
               <Separator />
             </Col>
           ))}
