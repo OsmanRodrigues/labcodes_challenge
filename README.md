@@ -90,12 +90,14 @@ The endpoint is only accessible via **GET** and it lists the products in the inv
     "description": "Graffiti Pencil",
     "code": "P-0142",
     "available_quantity": 150,
+    "category": "Pens and Pencils"
   },
   {
     "name": "Pen 0.4",
     "description": "0.40mm Ink Pen",
     "code": "P-0156",
     "available_quantity": 40,
+    "category":"Pens and Pencils"
   }
 ]
 ```
@@ -127,6 +129,7 @@ The endpoint is only accessible via **GET** and it returns the detail of the pro
   "description": "Graffiti Pencil",
   "code": "P-0142",
   "available_quantity": 150,
+  "category": "Pens and Pencils"
 }
 ```
 
