@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
-import { PongSpinner } from 'react-spinners-kit';
 import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 import { fetchProduct } from '../../store/actions';
+import { Button, H1, Spinner, Link, Box, Separator } from '../Atomic';
+import { FaArrowLeft } from 'react-icons/fa'
+import ProductCard from '../ProductCard';
+import { DetailsBoard } from './DetailsBoard';
 
 
 export class ProductDetailsPage extends React.Component {
@@ -20,38 +22,33 @@ export class ProductDetailsPage extends React.Component {
 
     if (isLoading) {
       return (
-        <Container style={{ height: '100vh' }}>
-          <div style={{ margin: '0 auto', top: 'calc(50% - 17px)', width: '60px', position: 'relative' }}>
-            <PongSpinner />
-          </div>
-        </Container>
+        <Spinner />
       )
     }
 
     if (product) {
       return (
-        <Container>
+        <Container fluid={"lg"}>
           <Row>
             <Col>
-              <h1>{product.name}</h1>
+              <Box horizontal>
+                <Link to={'/'}>
+                  <Button isIconButton>
+                    <FaArrowLeft/>
+                  </Button>
+                </Link>
+                <H1>{product.name}</H1>
+                </Box>
             </Col>
           </Row>
-
+          <Separator/>
           <Row>
-            <Col>
-              <dl>
-                <dt>Code:</dt>
-                <dd>{product.code}</dd>
-                {product.description &&
-                  <React.Fragment>
-                    <dt>Description:</dt>
-                    <dd>{product.description}</dd>
-                  </React.Fragment>
-                }
-                <dt>Available quantity:</dt>
-                <dd>{product.available_quantity}</dd>
-              </dl>
-              <Link to='/'>Back to products list</Link>
+            <Col sm={8}>
+              <ProductCard product={product} isDetails />
+              <Separator/>
+            </Col>
+            <Col sm={4}>
+              <DetailsBoard product={product} />
             </Col>
           </Row>
         </Container>

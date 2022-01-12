@@ -38,7 +38,7 @@ export class ProductsListPage extends React.Component {
         <Row>
           {products.map(product => (
             <Col xs={12} sm={6} key={product.code}>
-              <ProductCard {...product} />
+              <ProductCard product={product} />
               <Separator />
             </Col>
           ))}
