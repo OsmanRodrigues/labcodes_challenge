@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { PongSpinner } from 'react-spinners-kit';
 import { Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 import { fetchProduct } from '../../store/actions';
 
@@ -60,6 +61,18 @@ export class ProductDetailsPage extends React.Component {
     return null;
   }
 }
+
+ProductDetailsPage.propTypes = {
+  isLoading: PropTypes.bool,
+  fetchProduct: PropTypes.func,
+  product: PropTypes.object
+};
+
+ProductDetailsPage.defaultProps = {
+  isLoading: false,
+  fetchProduct: () => {},
+  product: null
+};
 
 const mapStateToProps = (state) => ({ isLoading: state.products.isLoading, product: state.products.selectedItem });
 const mapDispatchToProps = (dispatch) => ({ fetchProduct: (code) => dispatch(fetchProduct(code)) });
